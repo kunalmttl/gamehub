@@ -17,10 +17,10 @@ function App()
           <GridItem area="nav">
             <NavBar></NavBar>
           </GridItem>
-          <GridItem area="aside" bg="darkgreen">
+          <GridItem area="aside">
             Aside
           </GridItem>
-          <GridItem area="main" bg="skyblue">
+          <GridItem area="main">
             Main Content
           </GridItem>
         </Grid>
