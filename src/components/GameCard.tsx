@@ -20,11 +20,13 @@ const GameCard = ({game} : GameCardProps) =>
           borderTopRadius="md"
           objectFit="cover"
           height="200px"/>
-        <CardBody gap="4">
-                <Card.Title mb="2" textStyle="sm"> {game.name} </Card.Title>
+        <CardBody gap="1">
                 <HStack justify={'space-between'} mb="2">
+                  <Card.Title mb="2" textStyle="sm"> {game.name} </Card.Title>
+                  <CriticScore score={game.metacritic}/>
+                </HStack>
+                <HStack justify={'space-around'} mb="2">
                         <PlatformIconList platforms={game.parent_platforms.map(p => p.platform)} />
-                        <CriticScore score={game.metacritic} />
                 </HStack>
         </CardBody>
       </Card.Root>

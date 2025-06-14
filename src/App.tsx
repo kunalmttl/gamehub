@@ -4,6 +4,7 @@ import { ChakraProvider, defaultSystem } from "@chakra-ui/react"
 import { ColorModeProvider } from "./components/ui/color-mode"
 import NavBar from "./components/NavBar"
 import GameGrid from "./components/GameGrid"
+import GenreList from "./components/GenreList"
 
 function App() 
 {
@@ -19,7 +20,7 @@ function App()
             <NavBar></NavBar>
           </GridItem>
           <GridItem area="aside">
-            Aside
+            <GenreList></GenreList>
           </GridItem>
           <GridItem area="main">
             <GameGrid></GameGrid>

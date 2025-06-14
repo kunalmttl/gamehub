@@ -32,12 +32,12 @@ const PlatformIconList = ({platforms} : Props ) =>
         };
 
   return (
-        <HStack spaceX={2} >
+        <HStack width={200} spaceX={1} >
                 {platforms.map(({ id, slug }) => 
                 {
                 const IconComponent = iconMap[slug];
                 if (!IconComponent) return null; // skip if no icon exists
-                return <Icon key={id} as={IconComponent} color='gray.500' />;
+                return <Icon size="sm" key={id} as={IconComponent} color='gray.500' />;
                 })}
         </HStack>
 )}
