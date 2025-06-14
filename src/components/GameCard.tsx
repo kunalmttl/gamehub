@@ -13,7 +13,7 @@ interface GameCardProps
 const GameCard = ({game} : GameCardProps) => 
 {
   return (
-      <Card.Root overflow = "hidden" size = "sm" maxW="sm" borderRadius="md" boxShadow="md" variant = "outline" colorPalette = "purple">
+      <Card.Root overflow = "hidden" size = "sm" width={277} borderRadius="md" boxShadow="md" variant = "outline" colorPalette = "purple">
         <Image
           src={getCroppedImageURL (game.background_image)}
           alt={game.name}
