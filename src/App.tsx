@@ -12,14 +12,19 @@ function App()
   <div>
     <ChakraProvider value={defaultSystem}>
       <ColorModeProvider>
-        <Grid templateAreas={{
+        <Grid 
+          templateAreas={{
             base :  `"nav" "main"`,
-            lg : `"nav nav" "aside main"`}}>
+            lg : `"nav nav" "aside main"`}}
+          templateColumns={{
+            base: '1fr',
+            lg: '125px 1fr'
+          }}>
 
           <GridItem area="nav">
             <NavBar></NavBar>
           </GridItem>
-          <GridItem area="aside">
+          <GridItem area="aside" paddingX={5}>
             <GenreList></GenreList>
           </GridItem>
           <GridItem area="main">
