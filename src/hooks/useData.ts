@@ -34,6 +34,7 @@ const useData = <T>(endpoint : string, requestConfig? : AxiosRequestConfig, deps
                                 })
 
                 return () => controller.abort();
+                // eslint-disable-next-line react-hooks/exhaustive-deps
                 }, deps ? [...deps] : [endpoint, requestConfig]);
 
         return { Data, error, isLoading };
