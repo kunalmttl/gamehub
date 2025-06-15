@@ -1,4 +1,3 @@
-// rfce
 import { Grid, GridItem } from "@chakra-ui/react"
 import { ChakraProvider, defaultSystem } from "@chakra-ui/react"
 import { ColorModeProvider } from "./components/ui/color-mode"
@@ -10,10 +9,20 @@ import type { Genre } from "./hooks/useGenres"
 import PlatformSelector from "./components/PlatformSelector"
 import type { Platform } from "./hooks/useGames"
 
+export interface GameQuery
+{
+  genre: Genre | null;
+  platform: Platform | null;
+
+}
+
+
 function App() 
 {
-  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
-  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null);
+  // const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  // const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null);
+
+  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
   return (
   <div>
@@ -32,11 +41,11 @@ function App()
             <NavBar></NavBar>
           </GridItem>
           <GridItem area="aside" paddingX={5}>
-            <GenreList selectedGenre = {selectedGenre} onSelectGenre={(Genre) => setSelectedGenre(Genre)}></GenreList>
+            <GenreList selectedGenre = {gameQuery.genre} onSelectGenre={(genre) => setGameQuery({...gameQuery, genre})}></GenreList>
           </GridItem>
           <GridItem area="main">
-            <PlatformSelector selectedPlatform = {selectedPlatform} onSelectPlatform={(Platform) => setSelectedPlatform(Platform)}/>
-            <GameGrid selectedPlatform ={selectedPlatform} selectedGenre={selectedGenre}></GameGrid>
+            <PlatformSelector selectedPlatform = {gameQuery.platform} onSelectPlatform={(platform) => setGameQuery({...gameQuery, platform})}/>
+            <GameGrid gameQuery={gameQuery}></GameGrid>
           </GridItem>
         </Grid>
       </ColorModeProvider>
