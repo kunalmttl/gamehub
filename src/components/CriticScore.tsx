@@ -1,4 +1,4 @@
-import { Badge, Stack } from "@chakra-ui/react"
+import { Badge, Stack, Text } from "@chakra-ui/react"
 
 interface Props {
   score: number
@@ -10,12 +10,13 @@ const CriticScore = ({score} : Props) => {
 
                 <Badge
                 colorPalette={score > 75 ? "green" : score > 60 ? "yellow" : "red"}
+                color="white" 
                 fontSize="12px"
                 paddingX={2}
                 borderRadius="4px"
                 textAlign="center"
                 >
-                {score}
+                <Text> {score} </Text>
                 </Badge>
         </Stack>
   )
